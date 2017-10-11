@@ -1,3 +1,4 @@
+const uuid = require('uuid/v4')
 const cats = []
 
 function getAll (limit) {
@@ -13,7 +14,7 @@ function create (body) {
     errors.push('name is required')
     response = { errors }
   } else {
-    const cat = { id: cats.length, name }
+    const cat = { id: uuid(), name }
     cats.push(cat)
     response = cat
   }
