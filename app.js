@@ -10,6 +10,8 @@ if (process.env.NODE_ENV === 'development') app.use(morgan('dev'))
 
 const catsRoutes = require('./src/routes/cats')
 app.use('/cats', catsRoutes)
+const dogsRoutes = require('./src/routes/dogs')
+app.use('/dogs', dogsRoutes)
 
 app.use((err, req, res, next) => {
   console.error(err)

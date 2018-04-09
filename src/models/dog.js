@@ -1,8 +1,8 @@
 const uuid = require('uuid/v4')
-const cats = []
+const dogs = []
 
 function getAll (limit) {
-  return limit ? cats.slice(0, limit) : cats
+  return limit ? dogs.slice(0, limit) : dogs
 }
 
 function create (body) {
@@ -14,23 +14,23 @@ function create (body) {
     errors.push('name is required')
     response = { errors }
   } else {
-    const cat = { id: uuid(), name }
-    cats.push(cat)
-    response = cat
+    const dog = { id: uuid(), name }
+    dogs.push(dog)
+    response = dog
   }
 
   return response
 }
 
 function getOne (id) {
-  const cat = cats.find(cat => cat.id === id)
+  const dog = dogs.find(dog => dog.id === id)
 
   let response
-  if (!cat) {
-    errors.push(`cat with ${id} not found`)
+  if (!dog) {
+    errors.push(`dog with ${id} not found`)
     response = { errors }
   } else {
-    response = cat
+    response = dog
   }
 
   return response
