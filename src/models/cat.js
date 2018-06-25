@@ -1,5 +1,5 @@
 const uuid = require('uuid/v4')
-const cats = []
+const cats = [ { id: uuid(), name: 'Eggo' } ]
 
 function getAll (limit) {
   return limit ? cats.slice(0, limit) : cats
